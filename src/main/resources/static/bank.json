@@ -2,7 +2,7 @@
   "name" : "ABC bank",
   "branchList" : [
     {
-      "name" : "my branch",
+      "name" : "br01",
       "counterList" :
       [
         {
