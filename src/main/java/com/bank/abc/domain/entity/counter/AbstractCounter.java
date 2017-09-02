@@ -1,19 +1,24 @@
 package com.bank.abc.domain.entity.counter;
 
+import com.bank.abc.domain.entity.ImmutableStyle;
 import com.bank.abc.domain.entity.person.AbstractEmployee;
-import com.sun.istack.internal.Nullable;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.immutables.value.Value;
 
+import java.util.List;
+import java.util.Optional;
+
+@Value.Immutable
+@ImmutableStyle
+@JsonDeserialize(as = Counter.class)
 public interface AbstractCounter
 {
     String getName();
 
-    @Nullable
     CounterState getState();
     CounterType getPrimaryCounterType();
 
-    @Nullable
-    CounterType[] getSecondaryCounterTypes();
+    List<CounterType> getSecondaryCounterTypes();
 
-    @Nullable
-    AbstractEmployee getHandledBy();
+    Optional<AbstractEmployee> getHandledBy();
 }

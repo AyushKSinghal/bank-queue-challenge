@@ -1,0 +1,17 @@
+{
+  "name" : "ABC bank",
+  "branchList" : [
+    {
+      "name" : "my branch",
+      "counterList" :
+      [
+        {
+          "name" : "C1",
+          "state" : "open",
+          "primaryCounterType" : "General"
+        }
+      ]
+
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package com.bank.abc.domain.token;
+package com.bank.abc.domain.service;
 
 import com.bank.abc.domain.entity.counter.AbstractCounter;
 import com.bank.abc.domain.entity.token.AbstractToken;

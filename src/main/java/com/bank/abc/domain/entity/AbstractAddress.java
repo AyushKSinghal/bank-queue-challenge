@@ -1,15 +1,15 @@
 package com.bank.abc.domain.entity;
 
-import com.sun.istack.internal.Nullable;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
 
 @Value.Immutable
 @ImmutableStyle
+@JsonDeserialize(as = Address.class)
 public interface AbstractAddress
 {
     String getAddressLine1();
 
-    @Nullable
     String getAddressLine2();
     String getCity();
     String getState();

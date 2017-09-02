@@ -4,27 +4,25 @@ import com.bank.abc.domain.entity.AbstractAddress;
 import com.bank.abc.domain.entity.ImmutableStyle;
 import com.bank.abc.domain.entity.counter.AbstractCounter;
 import com.bank.abc.domain.entity.person.AbstractEmployee;
-import com.sun.istack.internal.Nullable;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
 
 import java.util.List;
+import java.util.Optional;
 
 @Value.Immutable
 @ImmutableStyle
+@JsonDeserialize(as = Branch.class)
 public interface AbstractBranch
 {
     String getName();
 
-    @Nullable
-    AbstractAddress getAddress();
+    Optional<AbstractAddress> getAddress();
 
-    @Nullable
-    AbstractEmployee getManager();
+    Optional<AbstractEmployee> getManager();
 
-    @Nullable
-    AbstractEmployee[] getCounterStaffList();
+    List<AbstractEmployee> getStaffList();
 
-    @Nullable
     List<AbstractCounter> getCounterList();
 
 }
