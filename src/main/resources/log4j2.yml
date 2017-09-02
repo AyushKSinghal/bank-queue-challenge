@@ -1,0 +1,78 @@
+Configuration:
+  status: warn
+
+  Appenders:
+    RollingFile:
+      - name: "appAppender"
+        fileName: "${sys:application.home}/logs/bank-queue-challenge-app-trans.txt"
+        filePattern: "${sys:application.home}/logs/$${date:yyyy-MM}/bank-queue-challenge-app-%d{MM-dd-yyyy}-%i.txt.gz"
+        append: false
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1000 KB
+        DefaultRolloverStrategy:
+          max: 100
+        PatternLayout:
+          pattern: "DateTime=%d{ISO8601}{GMT} Application=${sys:application.name} Thread=[%.30t] Logger=%c Type=%p Message=%m%n"
+      - name: "systemAppender"
+        fileName: "${sys:application.home}/logs/bank-queue-challenge-system.txt"
+        filePattern: "${sys:application.home}/logs/$${date:yyyy-MM}/bank-queue-challenge-system-%d{MM-dd-yyyy}-%i.txt.gz"
+        append: false
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1000 KB
+        DefaultRolloverStrategy:
+          max: 100
+        PatternLayout:
+          pattern: "DateTime=%d{ISO8601}{GMT} Application=${sys:application.name} Thread=[%.30t] Logger=%c Type=%p Message=%m%n"
+      - name: "errorAppender"
+        fileName: "${sys:application.home}/logs/bank-queue-challenge-errors.txt"
+        filePattern: "${sys:application.home}/logs/$${date:yyyy-MM}/bank-queue-challenge-errors-%d{MM-dd-yyyy}-%i.txt.gz"
+        append: false
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1000 KB
+        DefaultRolloverStrategy:
+          max: 100
+        PatternLayout:
+          pattern: "DateTime=%d{ISO8601}{GMT} Application=${sys:application.name} Thread=[%.30t] Logger=%c Type=%p Message=%m%n"
+        ThresholdFilter:
+          level: "error"
+
+    Async:
+      - name: "errorAppender"
+        AppenderRef:
+          - ref: "fileAppender"
+      - name: "appAppender"
+        AppenderRef:
+          - ref: "fileAppender"
+      - name: "systemAppender"
+        AppenderRef:
+          - ref: "fileAppender"
+
+  Loggers:
+
+    Root:
+      level: "info"
+      AppenderRef:
+        - ref: "appAppender"
+          level: "info"
+        - ref: "errorAppender"
+          level: "info"
+
+    Logger:
+      - name: "com.bank.abc"
+        additivity: false
+        level: "info"
+        AppenderRef:
+          - ref: "appAppender"
+      - name: "org.springframework"
+        additivity: false
+        level: "info"
+        AppenderRef:
+          - ref: "systemAppender"
+      - name: "com.bank.abc"
+        additivity: false
+        level: "error"
+        AppenderRef:
+          - ref: "errorAppender"
