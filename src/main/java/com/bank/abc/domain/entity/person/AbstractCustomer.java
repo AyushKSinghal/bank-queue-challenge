@@ -10,19 +10,19 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = Customer.class)
 public interface AbstractCustomer
 {
-    String getFirtName();
-
-    String getLastName();
-
-    String getPhoneNumber();
-
-    Enum<Gender> getGender();
-
-    AbstractAddress getAddress();
+//    String getFirtName();
+//
+//    String getLastName();
+//
+//    String getPhoneNumber();
+//
+//    Enum<Gender> getGender();
+//
+//    AbstractAddress getAddress();
 
     String getCustomerId();
 
-    CustomerType getCustomerType();
+//    CustomerType getCustomerType();
 
     boolean isGuest();
 }

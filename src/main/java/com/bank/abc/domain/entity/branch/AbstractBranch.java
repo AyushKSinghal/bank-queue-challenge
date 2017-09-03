@@ -17,6 +17,8 @@ public interface AbstractBranch
 {
     String getName();
 
+    String getCode();
+
     Optional<AbstractAddress> getAddress();
 
     Optional<AbstractEmployee> getManager();

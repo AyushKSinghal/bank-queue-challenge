@@ -6,10 +6,14 @@ import com.bank.abc.domain.entity.counter.AbstractCounter;
 import com.bank.abc.domain.entity.counter.Counter;
 import com.bank.abc.domain.entity.person.AbstractCustomer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sun.istack.Nullable;
 import org.immutables.value.Value;
 import org.joda.time.DateTime;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Value.Immutable
 @ImmutableStyle
@@ -22,10 +26,12 @@ public interface AbstractToken
     QueryType getQuery();
     String getQueryDescription();
     AbstractCustomer getCustomer();
-    DateTime getCreateTime();
-    DateTime getLastUpdatedTime();
-    DateTime getClosedTime();
-    AbstractBranch getBranch();
-    AbstractCounter getNextCounter();
-    List<AbstractTokenCounter> getCounterVisitedList();
+    String getCreateTime();
+    String getLastUpdatedTime();
+    @Nullable
+    String getClosedTime();
+    String getBranchCode();
+    @Nullable
+    String getNextCounter();
+    HashMap<String, AbstractTokenCounter> getCounterVisitedList();
 }

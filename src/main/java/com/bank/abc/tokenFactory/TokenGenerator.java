@@ -1,8 +1,9 @@
 package com.bank.abc.tokenFactory;
 
 import com.bank.abc.domain.entity.token.AbstractToken;
+import com.bank.abc.domain.entity.token.Token;
 
 public interface TokenGenerator
 {
-    AbstractToken generateToken(TokenQuery tokenQuery);
+    Token generateToken(AbstractTokenInputData tokenInputData);
 }
