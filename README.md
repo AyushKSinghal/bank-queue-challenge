@@ -5,7 +5,14 @@ A bank, ABC Bank, has many branches and customers. Each branch has a limited num
 ### Build
 * Install mvn 3.3 or above
 * Install Java 8 or above
-* run ""
+* run in terminal 
+```
+mvn clean install
+```
+* Deploy code at localhost:8080 using terminal
+```
+mvn spring-boot:run
+```
 
 
 ## API Design
