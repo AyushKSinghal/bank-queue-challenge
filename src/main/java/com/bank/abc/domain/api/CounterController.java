@@ -44,7 +44,7 @@ public class CounterController
             method = { RequestMethod.GET },
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    ResponseEntity<List<AbstractToken>> getTokenQueue(@PathVariable("branchCode") String branchCode, @PathVariable("counterCode") String counterCode) {
+    ResponseEntity<List<String>> getTokenQueue(@PathVariable("branchCode") String branchCode, @PathVariable("counterCode") String counterCode) {
         return ResponseEntity.ok(counterService.getTokenQueue(branchCode, counterCode));
     }
 }

@@ -15,10 +15,7 @@ public class TokenInputDataGenerator
         return TokenInputData.builder()
                 .withDescription(description)
                 .withQueryType(queryType)
-                .withCustomer(Customer.builder()
-                        .withCustomerId(customerId)
-                        .withIsGuest(StringUtils.isEmpty(customerId) ? true : false)
-                        .build())
+                .withCustomerId(customerId)
                 .withBranchCode(branchCode)
                 .build();
     }

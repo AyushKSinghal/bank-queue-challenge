@@ -3,6 +3,7 @@ package com.bank.abc.domain.entity.person;
 import com.bank.abc.domain.entity.AbstractAddress;
 import com.bank.abc.domain.entity.ImmutableStyle;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sun.istack.Nullable;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -22,7 +23,8 @@ public interface AbstractCustomer
 
     String getCustomerId();
 
-//    CustomerType getCustomerType();
+    @Nullable
+    CustomerType getCustomerType();
 
     boolean isGuest();
 }

@@ -1,7 +1,9 @@
 package com.bank.abc.domain.service;
 
 import com.bank.abc.domain.dataaccess.BankRepository;
+import com.bank.abc.domain.dataaccess.CounterQueueData;
 import com.bank.abc.domain.entity.counter.AbstractCounter;
+import com.bank.abc.domain.entity.counter.Counter;
 import com.bank.abc.domain.entity.token.AbstractToken;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +40,13 @@ public class CounterService
                 .findFirst().orElse(null);
     }
 
-    public List<AbstractToken> getTokenQueue(String branchCode, String counterCode){
-        Optional<AbstractCounter> currentCounter = this.bankRepository.getBank().getBranchList().stream()
+    public List<String> getTokenQueue(String branchCode, String counterCode){
+        Optional<Counter> currentCounter = this.bankRepository.getBank().getBranchList().stream()
                 .filter(abstractBranch -> StringUtils.equals(abstractBranch.getCode(), branchCode))
                 .flatMap(abstractBranch -> abstractBranch.getCounterList().stream())
                 .filter(counter -> StringUtils.equals(counter.getCode(), counterCode))
                 .findFirst();
-        return currentCounter.isPresent() && currentCounter.get().getTokenQueue().isPresent() ? currentCounter.get().getTokenQueue().get() : Collections.emptyList();
+        return currentCounter.isPresent()  ? currentCounter.get().getTokenQueue() : Collections.emptyList();
     }
 
 }

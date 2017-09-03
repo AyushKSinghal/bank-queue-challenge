@@ -10,7 +10,51 @@
           "name" : "General Counter 1",
           "code" : "C1",
           "state" : "open",
-          "primaryCounterType" : "General"
+          "primaryCounterType" : "General",
+          "tokenQueue" : []
+        } ,
+        {
+          "name" : "Deposit Counter 2",
+          "code" : "C2",
+          "state" : "open",
+          "primaryCounterType" : "Deposit",
+          "tokenQueue" : []
+        } ,
+        {
+          "name" : "Preferred Customer Counter 3",
+          "code" : "C3",
+          "state" : "open",
+          "primaryCounterType" : "PreferredCustomer",
+          "tokenQueue" : []
+        }
+      ]
+
+    },
+    {
+      "name" : "abc Delhi branch",
+      "code" : "br02",
+      "counterList" :
+      [
+        {
+          "name" : "General Counter 1",
+          "code" : "C1",
+          "state" : "open",
+          "primaryCounterType" : "General",
+          "tokenQueue" : []
+        } ,
+        {
+          "name" : "Deposit Counter 2",
+          "code" : "C2",
+          "state" : "open",
+          "primaryCounterType" : "Deposit",
+          "tokenQueue" : []
+        } ,
+        {
+          "name" : "Preferred Customer Counter 3",
+          "code" : "C3",
+          "state" : "open",
+          "primaryCounterType" : "PreferredCustomer",
+          "tokenQueue" : []
         }
       ]
 
