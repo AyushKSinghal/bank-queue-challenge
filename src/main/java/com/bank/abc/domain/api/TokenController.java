@@ -1,5 +1,6 @@
 package com.bank.abc.domain.api;
 
+import com.bank.abc.domain.dataaccess.CounterQueueData;
 import com.bank.abc.domain.entity.counter.AbstractCounter;
 import com.bank.abc.domain.entity.token.AbstractToken;
 import com.bank.abc.domain.entity.token.QueryType;
@@ -73,7 +74,6 @@ public class TokenController
             @PathVariable("branchCode") String branchCode,
             @PathVariable("tokenId") String tokenId
            ) {
-        //TODO remove from counter queue
         return ResponseEntity.ok(tokenService.updateState(tokenId, TokenState.Completed));
     }
 
@@ -85,8 +85,6 @@ public class TokenController
             @PathVariable("branchCode") String branchCode,
             @PathVariable("tokenId") String tokenId
     ) {
-        //TODO remove from counter queue
-
         return ResponseEntity.ok(tokenService.updateState(tokenId, TokenState.Cancelled));
     }
 }

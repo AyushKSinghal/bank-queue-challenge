@@ -4,6 +4,7 @@ import com.bank.abc.domain.entity.ImmutableStyle;
 import com.bank.abc.domain.entity.person.AbstractEmployee;
 import com.bank.abc.domain.entity.token.AbstractToken;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.sun.istack.Nullable;
 import org.immutables.value.Value;
 
 import java.util.LinkedList;
@@ -21,11 +22,13 @@ public interface AbstractCounter
 
     CounterState getState();
 
-    Optional<LinkedList<AbstractToken>> getTokenQueue();
+    @Nullable
+    LinkedList<String> getTokenQueue();
 
     CounterType getPrimaryCounterType();
 
     List<CounterType> getSecondaryCounterTypes();
 
-    Optional<AbstractEmployee> getHandledBy();
+    @Nullable
+    AbstractEmployee getHandledBy();
 }

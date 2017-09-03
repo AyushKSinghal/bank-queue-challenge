@@ -11,6 +11,6 @@ public interface AbstractTokenInputData
 {
     QueryType getQueryType();
     String getDescription();
-    AbstractCustomer getCustomer();
+    String getCustomerId();
     String getBranchCode();
 }

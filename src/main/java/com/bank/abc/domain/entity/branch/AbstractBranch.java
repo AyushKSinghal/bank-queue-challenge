@@ -3,6 +3,7 @@ package com.bank.abc.domain.entity.branch;
 import com.bank.abc.domain.entity.AbstractAddress;
 import com.bank.abc.domain.entity.ImmutableStyle;
 import com.bank.abc.domain.entity.counter.AbstractCounter;
+import com.bank.abc.domain.entity.counter.Counter;
 import com.bank.abc.domain.entity.person.AbstractEmployee;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
@@ -25,6 +26,6 @@ public interface AbstractBranch
 
     List<AbstractEmployee> getStaffList();
 
-    List<AbstractCounter> getCounterList();
+    List<Counter> getCounterList();
 
 }

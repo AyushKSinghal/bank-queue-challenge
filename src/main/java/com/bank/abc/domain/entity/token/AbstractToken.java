@@ -33,5 +33,5 @@ public interface AbstractToken
     String getBranchCode();
     @Nullable
     String getNextCounter();
-    HashMap<String, AbstractTokenCounter> getCounterVisitedList();
+    HashMap<String, TokenCounter> getCounterVisitedList();
 }
