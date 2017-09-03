@@ -1,0 +1,19 @@
+{
+  "name" : "ABC bank",
+  "branchList" : [
+    {
+      "name" : "abc mumbai branch",
+      "code" : "br01",
+      "counterList" :
+      [
+        {
+          "name" : "General Counter 1",
+          "code" : "C1",
+          "state" : "open",
+          "primaryCounterType" : "General"
+        }
+      ]
+
+    }
+  ]
+}
